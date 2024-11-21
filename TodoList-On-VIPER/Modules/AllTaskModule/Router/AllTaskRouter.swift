@@ -20,6 +20,8 @@ final class AllTaskRouter: AllTaskRouterProtocol {
         presenter.interactor = interactor
         presenter.router = AllTaskRouter(navigationController: navigationController)
 
+        interactor.presenter = presenter
+
         return view
     }
 }

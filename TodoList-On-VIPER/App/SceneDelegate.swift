@@ -17,9 +17,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = (scene as? UIWindowScene) else { return }
 
         let navigationController = UINavigationController()
+        let module = AllTaskRouter.allTaskModuleBuilder(navigationController)
+        navigationController.pushViewController(module, animated: true)
 
         window = UIWindow(windowScene: scene)
-        window?.rootViewController = AllTaskRouter.allTaskModuleBuilder(navigationController)
+        window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
     }
 
